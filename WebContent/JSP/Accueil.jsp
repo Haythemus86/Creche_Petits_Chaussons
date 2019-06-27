@@ -4,12 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style><link rel="stylesheet" type="text/css" href="./CSS/Accueil.css"></style>
+<style><%@ include file="../CSS/Accueil.css" %></style>
 <title>Accueil</title>
 </head>
 <body>
+	<div id="bloc_page">
 		<header>
-			<h1>Accueil Micro Crèche Les Petits Chaussons</h1>
+			<div id="Titre_Principal">
+				<h1>Accueil Micro Crèche Les Petits Chaussons</h1>
+			</div>
+			
+			<nav>
+				<%@ include file="MenuNavigation.jsp" %>
+			</nav>
 		</header>
 		
 		
@@ -20,6 +27,6 @@
 		</footer>
 
 
-
+	</div>
 </body>
 </html>
