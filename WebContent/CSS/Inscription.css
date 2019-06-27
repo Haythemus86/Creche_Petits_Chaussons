@@ -31,7 +31,7 @@
     margin: auto;
 }
 
-section h1, footer h1, nav a
+section h1, footer h1, nav a, form
 {
     font-family: Dayrom, serif;
     font-weight: normal;
@@ -90,3 +90,54 @@ nav a:hover
     color: #760001;
     border-bottom: 3px solid #760001;
 }
+
+/* Formulaire */
+
+form {
+ background-color:#87CEFA;
+ padding:10px;
+ text-align : center;
+ width:auto;
+ 
+ }
+ 
+ fieldset {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ border:1px solid #000000;
+ }
+ 
+ legend {
+ color:#DF3F3F;
+ font-weight:bold
+ }
+ 
+ label {
+ 
+  display:block;
+  text-align: center;
+  width: auto;
+  
+ }
+ 
+ input {
+ 
+ 
+  
+
+  /* Pour que tous les champs texte aient la même dimension */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Pour harmoniser le look & feel des bordures des champs texte */
+  border: 1px solid #999;
+	
+}
+
+input[type=submit] {
+ width:auto;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #D83F3D;
+ cursor:pointer;
+ }
+ 
