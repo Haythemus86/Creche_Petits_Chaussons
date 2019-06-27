@@ -26,7 +26,7 @@
 					
 				<legend>Renseignements Parents</legend>
 				
-					<label for="Nom_De_Famille">Nom de famille</label><input type="text" id="Nom_De_Famille" name="Nom_De_Famille">
+					<label for="nom_De_Famille">Nom de famille</label><input type="text" id="nom_De_Famille" name="nom_De_Famille">
 					
 					<label for="prenom">Prenom</label><input type="text" id="prenom" name="prenom">
 					
@@ -49,6 +49,9 @@
 		</form>
 		
 		
+		<p> votre nom est ${ parent1.nom_De_Famille } </p>
+		<p> votre prenom est ${ parent1.prenom } </p>
+			
 		
 	
 
