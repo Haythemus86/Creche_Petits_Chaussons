@@ -42,16 +42,44 @@
 					
 					<label for="email">e-mail</label><input type="email" id="email" name="email" required="required">
 				
-			</fieldset>		
+			</fieldset>
+			
+			
+			
+				<fieldset>
+					
+				<legend>Renseignements Enfant</legend>
+				
+					<label for="nom_De_Famille_Enfant">Nom de famille</label><input type="text" id="nom_De_Famille_Enfant" name="nom_De_Famille_Enfant" required="required">
+					
+					<label for="prenom_Enfant">Prenom</label><input type="text" id="prenom_Enfant" name="prenom_Enfant" required="required">
+					
+					<label for="age_Enfant">Age</label><input type="text" id="age_Enfant" name="age_Enfant" required="required"> 
+						
+					<label for="sex_Enfant">Sex</label><input type="text" id="sex_Enfant" name="sex_Enfant" required="required">
+				
+					<label for="allergie_Enfant">Allergie</label><textarea id="allergie_Enfant" name="allergie_Enfant">Veuillez preciser si l'enfant à des allergies</textarea>
+					
+					
+				</fieldset>
+			
+			
 				
 			<input type="submit" value="soumettre le formulaire">
 		
 		</form>
 		
 		
-		<p> votre nom est ${ parent1.nom_De_Famille } </p>
-		<p> votre prenom est ${ parent1.prenom } </p>
+		<br>
+		<br>
+		
+		
+		
 			
+		
+		
+		
+
 		
 	
 

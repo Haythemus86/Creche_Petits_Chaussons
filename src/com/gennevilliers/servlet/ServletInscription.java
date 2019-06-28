@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.gennevilliers.beans.Enfants;
 import com.gennevilliers.beans.Parents;
 import com.gennevilliers.dao.DaoContext;
 import com.gennevilliers.sql.AjouterParents;
+import com.gennevilliers.sql.SQLEnfant;
 
 /**
  * Servlet implementation class ServletInscription
@@ -60,7 +62,7 @@ public class ServletInscription extends HttpServlet {
 		System.out.println("je suis ici 1 ");
 		
 		
-		//stockage du formulaire dans un bean Parents
+		//stockage du formulaire concernant les parents dans un bean Parents
 		Parents parent1 = new Parents();
 		parent1.setNom_De_Famille(request.getParameter("nom_De_Famille"));
 		parent1.setPrenom((String) request.getParameter("prenom"));
@@ -71,10 +73,19 @@ public class ServletInscription extends HttpServlet {
 		parent1.setEmail((String) request.getParameter("email"));
 		parent1.setVille(request.getParameter("ville"));
 		
+		//stockage du formulaire concernant les enfants dans un bean enfant
+		Enfants enfant1 = new Enfants();
+		enfant1.setNomDeFamille_Enfant(request.getParameter("nom_De_Famille_Enfant"));
+		enfant1.setPrenom_Enfant(request.getParameter("prenom_Enfant"));
+		enfant1.setSex_Enfant(request.getParameter("sex_Enfant"));
+		enfant1.setAge_Enfant(request.getParameter("age_Enfant"));
+		enfant1.setAllergie_Enfant(request.getParameter("allergie_Enfant"));
+		
 		//envoie du bean en base de donnee 
 		try {
 			AjouterParents.addParents(parent1);
-			System.out.println("envoie du parents en bdd reussi");
+			SQLEnfant.ajouterEnfants(enfant1);
+			System.out.println("envoie du parents et de l enfant en bdd reussi");
 		} catch (SQLException e) {
 			System.out.println("envoie du parents a la poubelle aprends a coder");
 			e.printStackTrace();
