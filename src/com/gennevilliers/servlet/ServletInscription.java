@@ -25,6 +25,9 @@ import com.gennevilliers.sql.SQLEnfant;
 public class ServletInscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	//Test pour javascript 
+	public int resultatEnvoieBdd = 0;
+	
 	
 	
 
@@ -83,14 +86,37 @@ public class ServletInscription extends HttpServlet {
 		
 		//envoie du bean en base de donnee 
 		try {
+			
 			AjouterParents.addParents(parent1);
 			SQLEnfant.ajouterEnfants(enfant1);
-			System.out.println("envoie du parents et de l enfant en bdd reussi");
+			
+			if ( SQLEnfant.getStatus() == 1 && AjouterParents.getStatus() == 1 ) {
+				System.out.println("Tout est bon on peut aller a l etape suivante");
+				
+				//Test pour du javascript
+				resultatEnvoieBdd = 1;
+				
+			
+				
+			}else {
+				System.out.println("probleme d ajout en bdd ");
+				
+				//test pour du javascript
+				resultatEnvoieBdd = 0;
+			}
+			
 		} catch (SQLException e) {
 			System.out.println("envoie du parents a la poubelle aprends a coder");
 			e.printStackTrace();
 		}
 		
+	
+		
+	
+		//test
+		System.out.println("je suis la");
+		
+		request.setAttribute("resultatEnvoieBdd", resultatEnvoieBdd );
 	
 		//renvoie les informations du bean vers la jsp
 		request.setAttribute("parent1", parent1);

@@ -12,7 +12,7 @@ import com.gennevilliers.dao.DaoContext;
 
 public class AjouterParents extends DaoContext {
 	
-	
+	private static int status;
 	
 
 	public static void addParents ( Parents pParents ) throws SQLException {
@@ -34,7 +34,7 @@ public class AjouterParents extends DaoContext {
 				 preparedStatement.setString(7, pParents.getTelephone2());
 				 preparedStatement.setString(8, pParents.getEmail());
 				
-				 preparedStatement.executeUpdate();
+				 setStatus(preparedStatement.executeUpdate());
 				 
 						 
 			 }
@@ -61,6 +61,16 @@ public class AjouterParents extends DaoContext {
 			
 		}
 		
+	}
+
+
+	public static int getStatus() {
+		return status;
+	}
+
+
+	public static void setStatus(int status) {
+		AjouterParents.status = status;
 	}
 	
 	

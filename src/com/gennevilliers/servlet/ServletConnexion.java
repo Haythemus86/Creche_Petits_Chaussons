@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletAccueil
+ * Servlet implementation class ServletConnexion
  */
-@WebServlet("/Accueil")
-public class ServletAccueil extends HttpServlet {
+@WebServlet("/Connexion")
+public class ServletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletAccueil() {
+    public ServletConnexion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,14 +26,11 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		String prenom = "haythem";
-		request.setAttribute("prenom", prenom);
+		// TODO Auto-generated method stub
 		
 		
 		
-		this.getServletContext().getRequestDispatcher("/JSP/Accueil.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/JSP/Connexion.jsp").forward(request, response);
 	}
 
 	/**

@@ -20,6 +20,8 @@
 		</header>
 		
 		
+		
+		
 		<form method="post" action="">
 			
 			<fieldset>
@@ -72,6 +74,10 @@
 		
 		<br>
 		<br>
+		
+		<c:if test="${ resultatEnvoieBdd == 0 }">affiche fenetre avertissement</c:if>
+		
+	
 		
 		
 		

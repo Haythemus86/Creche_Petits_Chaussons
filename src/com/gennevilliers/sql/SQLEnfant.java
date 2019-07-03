@@ -10,6 +10,8 @@ import com.gennevilliers.dao.DaoContext;
 
 public class SQLEnfant extends DaoContext {
 	
+	private static int status;
+	
 	
 	
 	public static void ajouterEnfants(Enfants enfant) throws SQLException {
@@ -26,7 +28,7 @@ public class SQLEnfant extends DaoContext {
 				preparedStatement.setString(4, enfant.getSex_Enfant());
 				preparedStatement.setString(5, enfant.getAllergie_Enfant());
 				
-				preparedStatement.executeUpdate();
+				 setStatus(preparedStatement.executeUpdate());
 				
 			}
 			
@@ -36,6 +38,18 @@ public class SQLEnfant extends DaoContext {
 		
 		
 		
+	}
+
+
+
+	public static int getStatus() {
+		return status;
+	}
+
+
+
+	public static void setStatus(int status) {
+		SQLEnfant.status = status;
 	}
 
 }
