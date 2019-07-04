@@ -1,1 +1,50 @@
-@charset "ISO-8859-1";
+/* Formulaire */
+
+form {
+ background-color:#87CEFA;
+ padding:10px;
+ text-align : center;
+ width:auto;
+ 
+ }
+ 
+ fieldset {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ border:1px solid #000000;
+ }
+ 
+ legend {
+ color:#DF3F3F;
+ font-weight:bold
+ }
+ 
+ label {
+ 
+  display:block;
+  text-align: center;
+  width: auto;
+  
+ }
+ 
+ input {
+ 
+ 
+  
+
+  /* Pour que tous les champs texte aient la même dimension */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Pour harmoniser le look & feel des bordures des champs texte */
+  border: 1px solid #999;
+	
+}
+
+input[type=submit] {
+ width:auto;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #D83F3D;
+ cursor:pointer;
+ }
+ 

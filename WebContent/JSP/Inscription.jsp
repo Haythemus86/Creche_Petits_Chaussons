@@ -75,7 +75,12 @@
 		<br>
 		<br>
 		
-		<c:if test="${ resultatEnvoieBdd == 0 }">affiche fenetre avertissement</c:if>
+		<c:if test="${ resultatEnvoieBdd == 1 }">
+			<script type="text/javascript">
+				alert("D'ici quelques instant vous allez recevoir un email de confirmation ainsi que votre login"
+						+" et votre identifiant !");
+			</script>
+		</c:if>
 		
 	
 		
