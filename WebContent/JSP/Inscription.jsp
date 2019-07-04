@@ -28,21 +28,21 @@
 					
 				<legend>Renseignements Parents</legend>
 				
-					<label for="nom_De_Famille">Nom de famille</label><input type="text" id="nom_De_Famille" name="nom_De_Famille" required="required">
+					<label for="nom_De_Famille">Nom de famille</label><input type="text" id="nom_De_Famille" name="nom_De_Famille" value="Nom de Famille" required="required">
 					
-					<label for="prenom">Prenom</label><input type="text" id="prenom" name="prenom" required="required">
+					<label for="prenom">Prenom</label><input type="text" id="prenom" name="prenom" value="prenom" required="required">
 					
-					<label for="adresse_Postale">Adresse postale </label><input type="text" id="adresse_Postale" name="adresse_Postale" required="required"> 
+					<label for="adresse_Postale">Adresse postale </label><input type="text" id="adresse_Postale" name="adresse_Postale" value="adresse postale required="required"> 
 						
 					<label for="code_Postale">Code Postale</label><input type="text" id="code_Postale" name="code_Postale" required="required">
 				
-					<label for="ville">Ville</label><input type="text" id="ville" name="ville" required="required">
+					<label for="ville">Ville</label><input type="text" id="ville" name="ville" value="ville" required="required">
 					
-					<label for="telephone1">Téléphone 1</label><input type="tel" id="telephone1" name="telephone1" required="required">
+					<label for="telephone1">Téléphone 1</label><input type="tel" id="telephone1" name="telephone1" value="06XXXXX" required="required">
 					
-					<label for="telephone2">Téléphone 2</label><input type="tel" id="telephone2" name="telephone2" required="required">
+					<label for="telephone2">Téléphone 2</label><input type="tel" id="telephone2" name="telephone2" value="06XXXXX" required="required">
 					
-					<label for="email">e-mail</label><input type="email" id="email" name="email" required="required">
+					<label for="email">e-mail</label><input type="email" id="email" name="email" value="adresse mail" required="required">
 				
 			</fieldset>
 			
@@ -79,6 +79,7 @@
 			<script type="text/javascript">
 				alert("D'ici quelques instant vous allez recevoir un email de confirmation ainsi que votre login"
 						+" et votre identifiant !");
+				document.location.href = "/Creche_Petits_Chaussons/Connexion";
 			</script>
 		</c:if>
 		
