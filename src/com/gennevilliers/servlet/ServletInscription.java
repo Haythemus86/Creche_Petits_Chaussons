@@ -31,11 +31,6 @@ public class ServletInscription extends HttpServlet {
 	
 	
 
-	@Override
-	public void init() throws ServletException {
-		DaoContext.init(getServletContext());
-	}
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

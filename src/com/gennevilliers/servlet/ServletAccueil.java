@@ -7,10 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.gennevilliers.dao.DaoContext;
+
 /**
  * Servlet implementation class ServletAccueil
  */
-@WebServlet("/Accueil")
+@WebServlet(urlPatterns = "/Accueil", loadOnStartup = 1)
 public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -21,6 +23,13 @@ public class ServletAccueil extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+
+	@Override
+	public void init() throws ServletException {
+		DaoContext.init(getServletContext());
+	}
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

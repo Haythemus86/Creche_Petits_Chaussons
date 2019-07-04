@@ -33,6 +33,10 @@
 			<input type="submit" value="Valider">
 		
 		</form>
+		
+		<script>
+		
+		</script>
 			
 	
 

@@ -17,10 +17,16 @@
 			<nav>
 				<%@ include file="MenuNavigation.jsp" %>
 			</nav>
+			
+
+			
+			
 		</header>
 		
 		
 		<section>
+		
+		  <img src="./IMAGES/villa_nova.jpg"alt="immeuble ou se situe la creche"/>
 		  	
 		
 		</section>
