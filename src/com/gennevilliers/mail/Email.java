@@ -9,11 +9,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.gennevilliers.beans.Parents;
+
 public class Email {
 	private String username = "haythem75008@gmail.com";
 	private String password = "hercules86";
+	
 
-public void envoyer() throws MessagingException, RuntimeException {
+public void envoyer(String email) throws MessagingException, RuntimeException {
 // Etape 1 : Création de la session
 Properties props = new Properties();
 props.put("mail.smtp.auth", "true");
@@ -29,7 +32,7 @@ return new PasswordAuthentication(username, password);
 try {
 // Etape 2 : Création de l'objet Message
 Message message = new MimeMessage(session);
-message.setFrom(new InternetAddress("i-tem@live.fr"));
+message.setFrom(new InternetAddress(email));
 message.setRecipients(Message.RecipientType.TO,
 InternetAddress.parse("i-tem@live.fr"));
 message.setSubject("Test email");
