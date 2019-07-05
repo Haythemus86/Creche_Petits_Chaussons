@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.mail.MessagingException;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.gennevilliers.beans.Enfants;
 import com.gennevilliers.beans.Parents;
 import com.gennevilliers.dao.DaoContext;
+import com.gennevilliers.mail.Email;
 import com.gennevilliers.sql.AjouterParents;
 import com.gennevilliers.sql.SQLEnfant;
 
@@ -88,6 +90,10 @@ public class ServletInscription extends HttpServlet {
 			if ( SQLEnfant.getStatus() == 1 && AjouterParents.getStatus() == 1 ) {
 				System.out.println("Tout est bon on peut aller a l etape suivante");
 				
+				//Test envoie email
+				Email email = new Email();
+				email.envoyer();
+				
 				//Test pour du javascript
 				resultatEnvoieBdd = 1;
 				
@@ -100,7 +106,7 @@ public class ServletInscription extends HttpServlet {
 				resultatEnvoieBdd = 0;
 			}
 			
-		} catch (SQLException e) {
+		} catch (SQLException | MessagingException e) {
 			System.out.println("envoie du parents a la poubelle aprends a coder");
 			e.printStackTrace();
 		}
