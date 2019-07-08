@@ -32,9 +32,9 @@ return new PasswordAuthentication(username, password);
 try {
 // Etape 2 : Création de l'objet Message
 Message message = new MimeMessage(session);
-message.setFrom(new InternetAddress(email));
+message.setFrom(new InternetAddress(username));
 message.setRecipients(Message.RecipientType.TO,
-InternetAddress.parse("i-tem@live.fr"));
+InternetAddress.parse(email));
 message.setSubject("Test email");
 message.setText("Bonjour, ce message est un test ...");
 // Etape 3 : Envoyer le message

@@ -93,6 +93,8 @@ public class ServletInscription extends HttpServlet {
 				//Test envoie email
 				Email email = new Email();
 				email.envoyer(parent1.getEmail());
+				System.out.println(parent1.getEmail());
+				
 				
 				//Test pour du javascript
 				resultatEnvoieBdd = 1;
