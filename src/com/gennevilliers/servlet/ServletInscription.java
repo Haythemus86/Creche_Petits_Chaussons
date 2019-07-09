@@ -108,8 +108,15 @@ public class ServletInscription extends HttpServlet {
 				resultatEnvoieBdd = 0;
 			}
 			
-		} catch (SQLException | MessagingException e) {
-			System.out.println("envoie du parents a la poubelle aprends a coder");
+		} catch (SQLException e ) {
+			if ( e.getErrorCode() == 1062  ) {
+				System.out.println("erreur adresse mail deja dans la bdd");
+				request.setAttribute("erreurMail", e.getErrorCode());
+			}
+			
+			e.printStackTrace();
+		}catch (MessagingException  e) {
+			System.out.println("erreur du server mail");
 			e.printStackTrace();
 		}
 		
@@ -118,6 +125,8 @@ public class ServletInscription extends HttpServlet {
 	
 		//test
 		System.out.println("je suis la");
+		
+		
 		
 		request.setAttribute("resultatEnvoieBdd", resultatEnvoieBdd );
 	

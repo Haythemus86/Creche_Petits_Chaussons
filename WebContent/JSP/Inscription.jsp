@@ -83,6 +83,12 @@
 			</script>
 		</c:if>
 		
+		<c:if test="${ erreurMail == 1062 }">
+			<script type="text/javascript">
+				alert("L'adresse mail saisie est deja dans la base de données");
+			</script>
+		</c:if>
+		
 	
 		
 		
