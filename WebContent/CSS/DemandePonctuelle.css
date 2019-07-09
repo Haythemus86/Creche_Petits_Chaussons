@@ -103,6 +103,7 @@ img {
 
 form {
  background-color:#87CEFA;
+ font-size: 3em;
  padding:10px;
  text-align : center;
  width:auto;
@@ -136,6 +137,7 @@ form {
   /* Pour que tous les champs texte aient la même dimension */
   width: 300px;
   box-sizing: border-box;
+  font-size: 0.9em;
 
   /* Pour harmoniser le look & feel des bordures des champs texte */
   border: 1px solid #999;
