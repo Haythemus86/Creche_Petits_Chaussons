@@ -1,11 +1,18 @@
 package com.gennevilliers.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.gennevilliers.beans.DemandePonctuelle;
+import com.gennevilliers.sql.DemandePonctuelleSQL;
 
 /**
  * Servlet implementation class ServletDemandePonctuelle
@@ -26,7 +33,7 @@ public class ServletDemandePonctuelle extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		this.getServletContext().getRequestDispatcher("/JSP/DemandePonctuelle.jsp").forward(request, response);
 	}
 
@@ -34,8 +41,40 @@ public class ServletDemandePonctuelle extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+		DemandePonctuelle demande1 = new DemandePonctuelle();
+		
+		//recuperation des donnes du formulaire et passage dans le bean
+		 demande1.setDateArrivee( request.getParameter("dateGardeEnfantArrivee"));
+		 demande1.setDateDepart(request.getParameter("dateGardeEnfantDepart"));
+		 
+		 // envoie de l objet demande1 dans une fonction qui va le traiter
+		 // function( demande1);
+		 
+		 LocalDateTime dateArrivee = demande1.conversionDateArrivee(demande1);	
+		 LocalDateTime dateDepart = demande1.conversionDateDepart(demande1);
+		 
+		 //envoie des dates en bdd
+		 DemandePonctuelleSQL demandePonctuelleSQL = new DemandePonctuelleSQL();
+		 try {
+			demandePonctuelleSQL.enregistrerDemandeEnBdd(dateArrivee, dateDepart);
+			System.out.println("tout est ok date saisie en bdd ");
+		} catch (SQLException e) {
+			System.out.println("probleme de saisi de date");
+			e.printStackTrace();
+		}
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		this.getServletContext().getRequestDispatcher("/JSP/DemandePonctuelle.jsp").forward(request, response);
+
 	}
 
 }
