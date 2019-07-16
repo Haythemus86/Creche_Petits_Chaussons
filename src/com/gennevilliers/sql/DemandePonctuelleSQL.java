@@ -20,13 +20,13 @@ public class DemandePonctuelleSQL extends DaoContext {
 		
 		try ( Connection connection = DriverManager.getConnection(dbURL, dbLogin, dbPassword)){
 			
-			String commandeSQL = "INSERT INTO demandePonctuelle (arrivee,depart)"
-					+ "VALUES (?,?) ";
+			String commandeSQL = "INSERT INTO demandePonctuelle (arrivee,depart,email)"
+					+ "VALUES (?,?,?) ";
 			
 			try (PreparedStatement preparedStatement = connection.prepareStatement(commandeSQL)){
 				preparedStatement.setObject(1,demande1.getDateArrivee());
 				preparedStatement.setObject(2,demande1.getDateDepart());
-				
+				preparedStatement.setObject(3, demande1.getEmail());
 			   status = preparedStatement.executeUpdate();
 			 
 			 
