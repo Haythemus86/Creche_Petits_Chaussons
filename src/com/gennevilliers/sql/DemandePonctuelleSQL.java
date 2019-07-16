@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+import com.gennevilliers.beans.DemandePonctuelle;
 import com.gennevilliers.dao.DaoContext;
 
 public class DemandePonctuelleSQL extends DaoContext {
@@ -15,7 +16,7 @@ public class DemandePonctuelleSQL extends DaoContext {
 	private int status;
 	
 	
-	public void enregistrerDemandeEnBdd(LocalDateTime dateArrivee, LocalDateTime dateDepart) throws SQLException {
+	public void enregistrerDemandeEnBdd(DemandePonctuelle demande1) throws SQLException {
 		
 		try ( Connection connection = DriverManager.getConnection(dbURL, dbLogin, dbPassword)){
 			
@@ -23,8 +24,8 @@ public class DemandePonctuelleSQL extends DaoContext {
 					+ "VALUES (?,?) ";
 			
 			try (PreparedStatement preparedStatement = connection.prepareStatement(commandeSQL)){
-				preparedStatement.setObject(1, dateArrivee);
-				preparedStatement.setObject(2, dateDepart);
+				preparedStatement.setObject(1,demande1.getDateArrivee());
+				preparedStatement.setObject(2,demande1.getDateDepart());
 				
 			   status = preparedStatement.executeUpdate();
 			 

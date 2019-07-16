@@ -32,7 +32,7 @@
 					
 					<label for="prenom">Prenom</label><input type="text" id="prenom" name="prenom" value="prenom" required="required">
 					
-					<label for="adresse_Postale">Adresse postale </label><input type="text" id="adresse_Postale" name="adresse_Postale" value="adresse postale required="required"> 
+					<label for="adresse_Postale">Adresse postale </label><input type="text" id="adresse_Postale" name="adresse_Postale" value="adresse postale" required="required"> 
 						
 					<label for="code_Postale">Code Postale</label><input type="text" id="code_Postale" name="code_Postale" required="required">
 				

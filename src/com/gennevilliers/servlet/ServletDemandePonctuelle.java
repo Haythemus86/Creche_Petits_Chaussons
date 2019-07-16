@@ -48,16 +48,16 @@ public class ServletDemandePonctuelle extends HttpServlet {
 		 demande1.setDateArrivee( request.getParameter("dateGardeEnfantArrivee"));
 		 demande1.setDateDepart(request.getParameter("dateGardeEnfantDepart"));
 		 
-		 // envoie de l objet demande1 dans une fonction qui va le traiter
-		 // function( demande1);
-		 
-		 LocalDateTime dateArrivee = demande1.conversionDateArrivee(demande1);	
-		 LocalDateTime dateDepart = demande1.conversionDateDepart(demande1);
+		 //Test heure qui bug-- a la sortie du formulaire
+		 System.out.println("sortie formulaire ::::heure d arrivee " +request.getParameter("dateGardeEnfantArrivee"));
+		 System.out.println("sortie formulaire ::::heure depart " + request.getParameter("dateGardeEnfantDepart"));
+		 System.out.println(request.getParameter("dateGardeEnfantArrivee").getClass().getTypeName());
+	
 		 
 		 //envoie des dates en bdd
 		 DemandePonctuelleSQL demandePonctuelleSQL = new DemandePonctuelleSQL();
 		 try {
-			demandePonctuelleSQL.enregistrerDemandeEnBdd(dateArrivee, dateDepart);
+			demandePonctuelleSQL.enregistrerDemandeEnBdd(demande1);
 			System.out.println("tout est ok date saisie en bdd ");
 		} catch (SQLException e) {
 			System.out.println("probleme de saisi de date");

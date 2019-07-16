@@ -30,34 +30,5 @@ public class DemandePonctuelle implements Serializable {
 	}
 	
 	
-	public LocalDateTime conversionDateArrivee ( DemandePonctuelle demandePonctuelle) {
-		
-		String supprimerT = demandePonctuelle.getDateDepart().replaceAll("[T]"," ");
-		
-	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
-	
-	LocalDateTime dateArriveeConvertie = LocalDateTime.parse(supprimerT, formatter);
-	
-	return dateArriveeConvertie;
-		
-		
-	}
-	
-	public LocalDateTime conversionDateDepart (DemandePonctuelle demandePonctuelle) {
-		
-		
-		String supprimerT = demandePonctuelle.getDateArrivee().replaceAll("[T]"," ");
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-		
-		LocalDateTime dateArriveConvertie = LocalDateTime.parse(supprimerT, formatter);
-		
-		return dateArriveConvertie;
-		
-		
-	}
-	
-  
-	
 
 }
