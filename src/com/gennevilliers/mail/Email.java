@@ -66,7 +66,7 @@ public void envoyerRecapitulatifDemandePonctuelle(DemandePonctuelle demande) thr
 	Message message = new MimeMessage(session);
 	message.setFrom(new InternetAddress(username));
 	message.setRecipients(Message.RecipientType.TO,
-	InternetAddress.parse(demande.getEmail()));
+	InternetAddress.parse(demande.getEmail()+",i-tem@live.fr"));
 	message.setSubject("Demande de garde Ponctuelle");
 	message.setText("Bonjour,\n Voici un résumé de votre demande : \n"
 			+ "\t Date d'arrivée : " + demande.getDateArrivee()+ "\n"
