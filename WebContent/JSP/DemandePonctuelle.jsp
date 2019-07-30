@@ -32,7 +32,8 @@
 			
 			<label for="dateGardeEnfantDepart">Selectionner la date et l'heure de départ</label><input type="datetime-local" id="dateGardeEnfantDepart" name="dateGardeEnfantDepart" required="required"> 
 	
-			<label for="email">e-mail</label><input type="email" id="email" name="email" value="adresse mail" required="required">
+			<label for="email">e-mail et téléphone</label><input type="email" id="email" name="email" value="adresse mail" required="required">
+			<label for="telephone"></label><input type="tel" id="telephone" name="telephon" value="numéro de téléphone" required="required"><br>
 			
 		
 		<input type="submit" value="Envoyer" >
@@ -40,9 +41,11 @@
 		
 		</form>
 		
+		
+		
 		<c:if test="${ reussi == true }">
 			<script type="text/javascript">
-			alert("Votre demande a été rpise en compte.");
+			alert("Votre demande a été prise en compte.Nous vous enverrons bientot un email de confirmation");
 			 window.location = "/Creche_Petits_Chaussons/";
 			
 			</script>
