@@ -51,6 +51,7 @@ public class ServletDemandePonctuelle extends HttpServlet {
 		 demande1.setDateArrivee( request.getParameter("dateGardeEnfantArrivee"));
 		 demande1.setDateDepart(request.getParameter("dateGardeEnfantDepart"));
 		 demande1.setEmail(request.getParameter("email"));
+		 demande1.setTelephone(request.getParameter("telephone"));
 		 
 		 //Test heure qui bug-- a la sortie du formulaire
 		 System.out.println("sortie formulaire ::::heure d arrivee " +request.getParameter("dateGardeEnfantArrivee"));

@@ -9,13 +9,20 @@ public class DemandePonctuelle implements Serializable {
 	private String dateArrivee;
 	private String dateDepart;
 	private String email;
+	private String telephone;
 	
+
+
 	public DemandePonctuelle() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	
 	//GETTERS
+	
+	public String getTelephone() {
+		return telephone;
+	}
 	
 	public String getDateArrivee() {
 		return dateArrivee;
@@ -50,6 +57,10 @@ public class DemandePonctuelle implements Serializable {
 		this.email = email;
 	}
 	
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
 	
 	
 	
